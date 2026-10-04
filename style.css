@@ -1,0 +1,288 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#f4f6fa;color:#10203a;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.page{width:min(100%,980px);margin:0 auto;padding:0 14px 14px}
+.city-cover{position:relative;height:clamp(360px,48vw,510px);overflow:hidden;border-radius:0 0 30px 30px;background:#eaf0f7}
+.cover-image-link{position:absolute;inset:0;display:block}
+.city-cover-image{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block}
+.city-cover:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.93) 27%,rgba(255,255,255,.55) 43%,rgba(255,255,255,0) 66%)}
+.cover-copy{position:absolute;z-index:2;left:5%;top:9%;width:62%}
+.location-pill{display:inline-flex;align-items:center;min-height:54px;padding:0 24px;border-radius:16px;background:#2f64bd;color:#fff;font-size:clamp(18px,2.5vw,25px);font-weight:800;box-shadow:0 7px 18px rgba(35,91,177,.18)}
+.cover-copy h1{margin:42px 0 17px;font-size:clamp(46px,6.8vw,76px);line-height:.98;letter-spacing:-2.5px;font-weight:800}
+.cover-copy p{
+  margin:0;
+  color:#18283e;
+  font-size:clamp(21px,3vw,31px);
+  line-height:1.32;
+  font-weight:600;
+  text-shadow:0 1px 3px rgba(255,255,255,.5)
+}
+.channels-card{position:relative;z-index:3;margin:22px 18px 0;background:rgba(255,255,255,.98);border:1px solid #e1e6ed;border-radius:28px;overflow:hidden;box-shadow:0 12px 30px rgba(24,45,72,.08)}
+.channel{display:flex;align-items:center;gap:26px;min-height:154px;padding:18px 30px;border-bottom:1px solid #e5e8ed;transition:background .15s}
+.channel:last-child{border-bottom:0}
+.channel:hover{background:#fbfcff}
+.avatar{flex:0 0 auto;width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid #dce8f9}
+.channel-content{min-width:0;flex:1;display:grid;grid-template-columns:minmax(0,1fr) 320px;align-items:center;gap:22px}
+.channel-text h2{margin:0 0 6px;font-size:clamp(21px,2.5vw,29px);line-height:1.12;letter-spacing:-.4px}
+.channel-text p{margin:0;color:#657387;font-size:clamp(16px,1.9vw,21px);line-height:1.25}
+.channel-cta{display:flex;align-items:center;justify-content:center;min-height:58px;padding:0 20px;border-radius:16px;background:linear-gradient(135deg,#4f8fe8,#245ab2);color:#fff;font-size:clamp(16px,1.9vw,20px);font-weight:800;box-shadow:0 7px 15px rgba(39,91,177,.18)}
+.channel-cta b{font-size:25px;margin-left:22px}
+@media(max-width:760px){
+.page{padding:0 9px 10px}
+.city-cover{height:390px;border-radius:0 0 24px 24px}
+.city-cover:after{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.93) 29%,rgba(255,255,255,.48) 51%,rgba(255,255,255,0) 76%)}
+.cover-copy{left:5%;top:8%;width:80%}
+.location-pill{min-height:48px;padding:0 17px;border-radius:14px;font-size:18px}
+.cover-copy h1{margin:35px 0 14px;font-size:44px;letter-spacing:-2px}
+.cover-copy p{font-size:21px;line-height:1.28}
+.channels-card{margin:16px 7px 0;border-radius:22px}
+.channel{min-height:137px;padding:15px 15px;gap:15px}
+.avatar{width:78px;height:78px}
+.channel-content{display:block}
+.channel-text h2{font-size:20px;margin-bottom:4px}
+.channel-text p{font-size:15px;line-height:1.22;margin-bottom:10px}
+.channel-cta{min-height:43px;border-radius:12px;font-size:15px}
+.channel-cta b{font-size:21px;margin-left:15px}
+}
+@media(max-width:430px){
+.city-cover{height:285px}
+.cover-copy h1{font-size:40px;margin-top:31px}
+.cover-copy p{font-size:19px}
+.channel{min-height:126px;padding:13px 12px;gap:12px}
+.avatar{width:68px;height:68px}
+.channel-text h2{font-size:18px}
+.channel-text p{font-size:13.5px;margin-bottom:8px}
+.channel-cta{min-height:39px;font-size:13.5px}
+.channel-cta b{font-size:18px;margin-left:11px}
+}
+
+.final-card {
+  margin: 18px 18px 0;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.heart {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff2f2;
+  color: #e05252;
+  font-size: 37px;
+}
+
+.final-card h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
+
+.final-card p {
+  margin: 0;
+  color: #657387;
+}
+
+@media (max-width: 760px) {
+  .final-card {
+    margin: 10px 7px 0;
+    padding: 14px 20px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .heart {
+    width: 50px;
+    height: 50px;
+    font-size: 31px;
+  }
+
+  .final-card h2 {
+    font-size: 17px;
+  }
+
+  .final-card p {
+    font-size: 13px;
+  }
+}
+
+
+/* --- Мини-тест о Санкт-Петербурге --- */
+.quiz-card{
+  position:relative;
+  z-index:4;
+  margin:-48px 18px 0;
+  padding:28px;
+  background:#fff;
+  border:1px solid #e1e6ed;
+  border-radius:28px;
+  box-shadow:0 10px 26px rgba(24,45,72,.06);
+}
+.quiz-heading{text-align:center;margin-bottom:22px}
+.quiz-kicker{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#edf4ff;
+  color:#2f64bd;
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.quiz-heading h2{
+  margin:11px 0 7px;
+  font-size:clamp(25px,3.3vw,35px);
+  line-height:1.08;
+  letter-spacing:-.8px;
+}
+.quiz-heading p{margin:0;color:#657387;font-size:16px}
+.quiz-questions{display:grid;gap:12px}
+.quiz-question{
+  padding:17px;
+  border:1px solid #e3e8ef;
+  border-radius:18px;
+  background:#f9fbfd;
+}
+.question-title{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:12px;
+  color:#18283e;
+  font-size:17px;
+  line-height:1.25;
+  font-weight:800;
+}
+.question-title>span{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  width:27px;height:27px;
+  border-radius:9px;
+  background:#e8f0fc;
+  color:#2f64bd;
+  font-size:14px;
+}
+.answer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+}
+.answer{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:45px;
+  margin:0;
+  padding:9px 12px;
+  border:1px solid #e1e6ed;
+  border-radius:12px;
+  background:#fff;
+  color:#33445b;
+  font-size:15px;
+  line-height:1.2;
+  cursor:pointer;
+  transition:border-color .15s,box-shadow .15s;
+}
+.answer:hover{border-color:#b8cce9;box-shadow:0 3px 10px rgba(39,91,177,.06)}
+.answer input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.check{
+  flex:0 0 auto;
+  width:20px;height:20px;
+  border:2px solid #c8d0da;
+  border-radius:5px;
+  background:#fff;
+  display:grid;
+  place-items:center;
+  transition:.15s;
+}
+.answer input:checked + .check{
+  border-color:#39a86b;
+  background:#39a86b;
+  box-shadow:0 0 0 2px rgba(57,168,107,.08);
+}
+.answer input:checked + .check:after{
+  content:"✓";
+  color:#fff;
+  font-size:14px;
+  line-height:1;
+  font-weight:900;
+}
+/* При выбранном ответе зелёным остаётся только квадратик */
+.answer:has(input:checked){
+  border-color:#e1e6ed;
+  background:#fff;
+  color:#33445b;
+  box-shadow:none;
+}
+.quiz-result{
+  display:none;
+  margin-top:16px;
+  padding:15px 12px 13px;
+  text-align:center;
+  color:#185b39;
+  border:1px solid #cfe9db;
+  border-radius:16px;
+  background:#f3fbf6;
+}
+.quiz-result.visible{display:block}
+.quiz-result-icon{
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  margin:0 auto 7px;
+  border-radius:50%;
+  background:#39a86b;
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+}
+.quiz-result strong{display:block;font-size:16px;color:#185b39}
+.quiz-result p{margin:4px 0 2px;color:#547064;font-size:13px;line-height:1.3}
+.quiz-result-arrow{
+  margin-top:3px;
+  color:#2f64bd;
+  font-size:23px;
+  line-height:1;
+  font-weight:900;
+}
+.quiz-result-text > span{
+  display:block;
+  margin-top:1px;
+  color:#2f64bd;
+  font-size:12px;
+  font-weight:800;
+}
+#channel-card{scroll-margin-top:14px}
+
+@media(max-width:760px){
+  .quiz-card{margin:-34px 7px 0;padding:17px 13px 18px;border-radius:22px}
+  .quiz-heading{margin-bottom:17px}
+  .quiz-kicker{font-size:11px;padding:5px 10px}
+  .quiz-heading h2{font-size:25px;line-height:1.08;letter-spacing:-.5px}
+  .quiz-heading p{font-size:14px}
+  .quiz-question{padding:13px;border-radius:15px}
+  .question-title{font-size:15px;gap:8px;margin-bottom:9px}
+  .question-title>span{width:24px;height:24px;border-radius:7px;font-size:12px}
+  .answer-grid{gap:7px}
+  .answer{min-height:40px;padding:8px 9px;font-size:13.5px}
+  .check{width:19px;height:19px}
+  .quiz-result{margin-top:12px;margin-bottom:0;padding:12px 9px 10px;border-radius:14px}
+  .quiz-result-icon{width:27px;height:27px;margin-bottom:6px;font-size:15px}
+  .quiz-result strong{font-size:14px}
+  .quiz-result p{font-size:12px;line-height:1.25;margin:3px 0 1px}
+  .quiz-result-arrow{font-size:21px;margin-top:2px}
+  .quiz-result-text > span{font-size:11.5px}
+}
